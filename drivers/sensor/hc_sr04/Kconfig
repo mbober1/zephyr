@@ -7,6 +7,7 @@ config HC_SR04
 	bool "HC-SR04 Ultrasound distance sensor"
 	default y
 	depends on DT_HAS_HC_SR04_ENABLED
-	depends on GPIO
+	select PWM
+	select PWM_CAPTURE
 	help
 	  Enable driver for HC-SR04 distance sensor.
